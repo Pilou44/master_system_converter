@@ -1,0 +1,149 @@
+{
+  "uuid": "522165e375c468e300985fde4840b7e3",
+  "path": "Offline/Master%20System%20Converter%20Plus",
+  "name": "Master System Converter Plus",
+  "content": "",
+  "created_at": "2022-10-01 17:06:23",
+  "updated_at": "2022-10-01 19:07:18",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "a75ecf288a788419f4422dc67384a319",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "177862ea06d44832b116a35067c092d4": 1,
+        "330841f76aea4fee9f9a5ba53f21259b": 1,
+        "abf3d150c9244167a04b4c21644f9592": 3,
+        "695a19d2527641489d5e0db35bfcf59b": 1,
+        "b7adf400643b4936be8b786704d0e70f": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "6x6-PushButton",
+          1,
+          "6X6-PUSHBUTTON",
+          "BUT1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "35f8e11d95b741f2b1393e03bca7f3f8",
+            "uuid": "695a19d2527641489d5e0db35bfcf59b"
+          }
+        ],
+        [
+          "GENESIS_CART_EDGE",
+          1,
+          "GENESIS_CART_EDGE",
+          "P1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "8c7cd444383c4788b0f2103e0304c7e4",
+            "uuid": "177862ea06d44832b116a35067c092d4"
+          }
+        ],
+        [
+          "56k",
+          1,
+          "RESISTANCE",
+          "R1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "04fd30d8ff764d6ea2a2f6642d92c2de",
+            "uuid": "abf3d150c9244167a04b4c21644f9592"
+          }
+        ],
+        [
+          "1.5k",
+          2,
+          "RESISTANCE",
+          "R2,R3",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "04fd30d8ff764d6ea2a2f6642d92c2de",
+            "uuid": "abf3d150c9244167a04b4c21644f9592"
+          }
+        ],
+        [
+          "DJEZO888-Board Pins 2x25",
+          1,
+          "DJEZO888-2X25 CARD EDGE 2.54",
+          "U1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "21bd55d2b6554e499dd1d26b3505d38e",
+            "uuid": "330841f76aea4fee9f9a5ba53f21259b"
+          }
+        ],
+        [
+          "ARDUINO_NANO",
+          1,
+          "COMM-TH_ARDUINO_NANO",
+          "U2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900017879",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "ARDUINO_NANO",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "ff6e2030776d4574a7594ce501bb86c5",
+            "uuid": "b7adf400643b4936be8b786704d0e70f"
+          }
+        ]
+      ],
+      "updateTime": 1664639666,
+      "createTime": 1664257282,
+      "histories": [],
+      "created_at": "2022-09-27 07:41:22",
+      "updated_at": "2022-10-01 17:54:26"
+    },
+    {
+      "uuid": "05a5d658221e7828b6a7b1cdc406bf7a",
+      "title": "PCB_Master System Converter",
+      "filename": "PCB_Master System Converter.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "04fd30d8ff764d6ea2a2f6642d92c2de": 3,
+        "ff6e2030776d4574a7594ce501bb86c5": 1,
+        "21bd55d2b6554e499dd1d26b3505d38e": 1,
+        "35f8e11d95b741f2b1393e03bca7f3f8": 1,
+        "8c7cd444383c4788b0f2103e0304c7e4": 1
+      },
+      "BOM": [],
+      "updateTime": 1664644038,
+      "createTime": 1664264336,
+      "histories": [],
+      "created_at": "2022-09-27 09:38:56",
+      "updated_at": "2022-10-01 19:07:18"
+    }
+  ],
+  "sort": [],
+  "title": "Master System Converter Plus",
+  "foldername": "Master System Converter Plus",
+  "schfilename": "Master System Converter Plus.json",
+  "schfilemtime": 1664639666554
+}
