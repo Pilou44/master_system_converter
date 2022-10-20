@@ -1,7 +1,8 @@
 #include <Sleep_n0m1.h>
+#include <avr/power.h>
 
-#define RD 1
-#define CE 0
+#define RD 12 // Rename OE
+#define CE 11
 #define D1 2
 #define D2 3
 #define D3 4
@@ -14,6 +15,7 @@ Sleep sleep;
 
 void setup() {
   // put your setup code here, to run once:
+  clock_prescale_set(clock_div_2);
   pinMode(RD, INPUT_PULLUP);
   pinMode(CE, OUTPUT);
   pinMode(D1, OUTPUT);
