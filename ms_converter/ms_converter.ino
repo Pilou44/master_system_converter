@@ -70,29 +70,7 @@ void loop() {
   digitalWrite(LED, 1);
   
 //  sleep.pwrDownMode(); //set sleep mode
-  int count = 0;
   while (1) {
-//    rdSync();
-//    count++;
-//    count = count % 3000000;
-//    if (count > 1500000) {
-//      digitalWrite(LED, 1);
-//    } else {
-//      digitalWrite(LED, 0);
-//    }
-
-//    waitRdHigh();
-//    digitalWrite(LED, 1);
-//    waitRdLow();
-//    digitalWrite(LED, 0);
-
-//    if (count > 1500000) {
-//      digitalWrite(LED, 1);
-//    } else {
-//      digitalWrite(LED, 0);
-//    }
-
-//    delay(500);
 //    sleep.sleepDelay(0xffffffffL); //sleep for: max long, about 50 days
   }
 }
