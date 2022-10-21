@@ -1,5 +1,4 @@
 #include <Sleep_n0m1.h>
-#include <avr/power.h>
 
 #define RD 12 // Rename OE
 #define CE 11
@@ -10,12 +9,12 @@
 #define D5 6
 #define D6 7
 #define D7 8
+#define LED 13
 
 Sleep sleep;
 
 void setup() {
   // put your setup code here, to run once:
-  clock_prescale_set(clock_div_2);
   pinMode(RD, INPUT_PULLUP);
   pinMode(CE, OUTPUT);
   pinMode(D1, OUTPUT);
@@ -25,6 +24,8 @@ void setup() {
   pinMode(D5, OUTPUT);
   pinMode(D6, OUTPUT);
   pinMode(D7, OUTPUT);
+
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
@@ -66,9 +67,33 @@ void loop() {
   pinMode(D6, INPUT);
   pinMode(D7, INPUT);
   
-  sleep.pwrDownMode(); //set sleep mode
+  digitalWrite(LED, 1);
+  
+//  sleep.pwrDownMode(); //set sleep mode
+  int count = 0;
   while (1) {
-    sleep.sleepDelay(0xffffffffL); //sleep for: max long, about 50 days
+//    rdSync();
+//    count++;
+//    count = count % 3000000;
+//    if (count > 1500000) {
+//      digitalWrite(LED, 1);
+//    } else {
+//      digitalWrite(LED, 0);
+//    }
+
+//    waitRdHigh();
+//    digitalWrite(LED, 1);
+//    waitRdLow();
+//    digitalWrite(LED, 0);
+
+//    if (count > 1500000) {
+//      digitalWrite(LED, 1);
+//    } else {
+//      digitalWrite(LED, 0);
+//    }
+
+//    delay(500);
+//    sleep.sleepDelay(0xffffffffL); //sleep for: max long, about 50 days
   }
 }
 
@@ -88,11 +113,11 @@ void rdSync() {
 }
 
 void outval(byte value) {
-  digitalWrite(D1, value & 0x01 > 0);
-  digitalWrite(D2, value & 0x02 > 0);
-  digitalWrite(D3, value & 0x04 > 0);
-  digitalWrite(D4, value & 0x08 > 0);
-  digitalWrite(D5, value & 0x10 > 0);
-  digitalWrite(D6, value & 0x20 > 0);
-  digitalWrite(D7, value & 0x40 > 0);
+  digitalWrite(D1, (value & 0x01) > 0);
+  digitalWrite(D2, (value & 0x02) > 0);
+  digitalWrite(D3, (value & 0x04) > 0);
+  digitalWrite(D4, (value & 0x08) > 0);
+  digitalWrite(D5, (value & 0x10) > 0);
+  digitalWrite(D6, (value & 0x20) > 0);
+  digitalWrite(D7, (value & 0x40) > 0);
 }
