@@ -1,4 +1,4 @@
-#include <Sleep_n0m1.h>
+#include <avr/sleep.h>
 
 /**
  * Values to write:
@@ -34,79 +34,61 @@
  * LED -> D13
  */
 
-Sleep sleep;
-
+#define WAIT_RD() do { } while (PIND & 0x10)
+#define WAIT_RD_HIGH()  do { } while (!(PIND & 0x10))
+#define OUTVAL(a,b) do { PORTD = a; PORTB = b | B00111000; } while(0)
+#define RD_SYNC() do { WAIT_RD(); WAIT_RD_HIGH(); } while(0)
 
 void setup() {
-  DDRB = B00101001; // D8, D9 and D13 outputs
+  DDRB = B00101001; // D8, D11 and D13 outputs
   DDRD = 0xFC; // D2 to D7 outputs
-  // ToDo input pull-up on RD ?
 }
 
 void loop() {
-  PORTB = B00101000; // Force CE high on the cart && LED on
+  PORTB = B00111000; // Force CE high on the cart && LED on
 
   /* DEC H */
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  outval(0x48, B00111000); // DEC H
-  waitRdHigh();
+  OUTVAL(0x48, 0x00); // DEC H
+  WAIT_RD_HIGH();
 
   /* DEC H */
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  outval(0x48, B00111000); // DEC H
-  rdSync();
+  OUTVAL(0x48, 0x00); // DEC H
+  RD_SYNC();
 
   /* LD HL, $E101 */
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x10 << 2 = 0x40 */
-  outval(0x40, B00111000); // DEC H
-  rdSync();
+  OUTVAL(0x40, 0x00); // DEC H
+  RD_SYNC();
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x00 << 2 = 0x00 */
-  outval(0x00, B00111000); // DEC H
-  rdSync();
+  OUTVAL(0x00, 0x00); // DEC H
+  RD_SYNC();
   /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x70 << 2 = 0xC0 */
-  outval(0xC0, B00111001); // DEC H
-  rdSync();
+  OUTVAL(0xC0, 0x01); // DEC H
+  RD_SYNC();
 
   /* DEC H */
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  outval(0x48, B00111000); // DEC H
-  rdSync();
+  OUTVAL(0x48, 0x00); // DEC H
+  RD_SYNC();
 
   /* LD SP,HL */
   /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x7C << 2 = 0xF0 */
-  outval(0xF0, B00111001); // DEC H
-  rdSync();
+  OUTVAL(0xF0, 0x01); // DEC H
+  RD_SYNC();
 
   /* RST $00 */
   /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x63 << 2 = 0x8C && LED OFF */
-  outval(0x8C, B00011001); // DEC H
-  rdSync();
+  OUTVAL(0x8C, 0x01); // DEC H
+  RD_SYNC();
 
   DDRD = 0; // Inputs
   DDRB = 0; // Inputs
   
-//  sleep.pwrDownMode(); //set sleep mode
   while (1) {
-//    sleep.sleepDelay(0xffffffffL); //sleep for: max long, about 50 days
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+    sleep_enable();
+    sleep_cpu();
   }
-}
-
-void waitRdLow() {
-  do {}
-  while (PINB & 0x10);
-}
-
-void waitRdHigh() {
-  do {}
-  while (!PINB & 0x10);
-}
-
-void rdSync() {
-  waitRdLow();
-  waitRdHigh();
-}
-
-void outval(byte portD, byte portB) {
-  PORTB = portB;
-  PORTD = portD;
 }
