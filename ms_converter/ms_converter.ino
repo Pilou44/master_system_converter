@@ -17,76 +17,73 @@
  * PORTC = A0 to A7
  * PORTD = D0 to D7
  *
- * V1.1 Mapping
+ * V2.0 Mapping
+ *
+ * PORTC:
+ * D1 -> A0
+ * D2 -> A1
+ * D3 -> A2
+ * D4 -> A3
+ * D5 -> A4
+ * D6 -> A5
+ * D7 -> A6
+ * D8 -> A7
  *
  * PORTD:
- * D1 -> D2
- * D2 -> D3
- * D3 -> D4
- * D4 -> D5
- * D5 -> D6
- * D6 -> D7
+ * CE -> D2
+ * RD -> D3 // Rename OE
  *
  * PORTB:
- * D7 -> D8
- * CE -> D11
- * RD -> D12 // Rename OE
  * LED -> D13
  */
 
-#define WAIT_RD() do { } while (PINB & 0x10)
-#define WAIT_RD_HIGH()  do { } while (!(PINB & 0x10))
-#define OUTVAL(a,b) do { PORTD = a; PORTB = b | B00111000; } while(0)
+#define WAIT_RD()  do { } while (PIND & 0x08)
+#define WAIT_RD_HIGH()  do { } while (!(PIND & 0x08))
 #define RD_SYNC() do { WAIT_RD(); WAIT_RD_HIGH(); } while(0)
 
 void setup() {
-  DDRB = B00101001; // D8, D11 and D13 outputs
-  DDRD = 0xFC; // D2 to D7 outputs
+  DDRC = 0xFF; // All outputs
+  DDRB = B00100000; // D13 outputs
+  DDRD = B00000100; // D2 outputs
 }
 
 void loop() {
-  PORTB = B00111000; // Force CE high on the cart && LED on && RD pullup
+  PORTD = B00000110; // Force CE high on the cart & RD pullup
+  PORTB = B00100000; // LED on
 
   /* DEC H */
-  /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  OUTVAL(0x48, 0x00); // DEC H
+  PORTC = 0x12; // DEC H
   WAIT_RD_HIGH();
 
   /* DEC H */
-  /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  OUTVAL(0x48, 0x00); // DEC H
+  PORTC = 0x12; // DEC H
   RD_SYNC();
 
   /* LD HL, $E101 */
-  /* PORTB = CE & RD pullup = B00011000, PORTD = 0x10 << 2 = 0x40 */
-  OUTVAL(0x40, 0x00); // DEC H
+  PORTC = 0x10; // DEC H
   RD_SYNC();
-  /* PORTB = CE & RD pullup = B00011000, PORTD = 0x00 << 2 = 0x00 */
-  OUTVAL(0x00, 0x00); // DEC H
+  PORTC = 0x00; // DEC H
   RD_SYNC();
-  /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x70 << 2 = 0xC0 */
-  OUTVAL(0xC0, 0x01); // DEC H
+  PORTC = 0x70; // DEC H
   RD_SYNC();
 
   /* DEC H */
-  /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
-  OUTVAL(0x48, 0x00); // DEC H
+  PORTC = 0x12; // DEC H
   RD_SYNC();
 
   /* LD SP,HL */
-  /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x7C << 2 = 0xF0 */
-  OUTVAL(0xF0, 0x01); // DEC H
+  PORTC = 0x7C; // DEC H
   RD_SYNC();
 
   /* RST $00 */
-  /* PORTB = CE & RD pullup & 0x01 = B00011001, PORTD = 0x63 << 2 = 0x8C && LED OFF */
-  OUTVAL(0x8C, 0x01); // DEC H
+  PORTC = 0x63; // DEC H
   RD_SYNC();
 
-  PORTB = B00000000; // Force CE low on the cart && LED off
+  DDRC = 0; // Inputs
   DDRD = 0; // Inputs
-  DDRB = 0; // Inputs
-  
+
+  PORTB = 0x00; // LED off
+
   while (1) {
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
     sleep_enable();
