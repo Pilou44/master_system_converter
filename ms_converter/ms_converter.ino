@@ -34,8 +34,8 @@
  * LED -> D13
  */
 
-#define WAIT_RD() do { } while (PIND & 0x10)
-#define WAIT_RD_HIGH()  do { } while (!(PIND & 0x10))
+#define WAIT_RD() do { } while (PINB & 0x10)
+#define WAIT_RD_HIGH()  do { } while (!(PINB & 0x10))
 #define OUTVAL(a,b) do { PORTD = a; PORTB = b | B00111000; } while(0)
 #define RD_SYNC() do { WAIT_RD(); WAIT_RD_HIGH(); } while(0)
 
@@ -45,7 +45,7 @@ void setup() {
 }
 
 void loop() {
-  PORTB = B00111000; // Force CE high on the cart && LED on
+  PORTB = B00111000; // Force CE high on the cart && LED on && RD pullup
 
   /* DEC H */
   /* PORTB = CE & RD pullup = B00011000, PORTD = 0x12 << 2 = 0x48 */
@@ -83,6 +83,7 @@ void loop() {
   OUTVAL(0x8C, 0x01); // DEC H
   RD_SYNC();
 
+  PORTB = B00000000; // Force CE low on the cart && LED off
   DDRD = 0; // Inputs
   DDRB = 0; // Inputs
   
