@@ -30,17 +30,18 @@
           "CustomPara"
         ],
         [
-          "6x6-PushButton",
+          "ARDUINO_NANO",
           1,
-          "6X6-PUSHBUTTON",
-          "BUT1",
+          "COMM-TH_ARDUINO_NANO",
+          "NANO",
           {
-            "BOM_Manufacturer": "",
-            "BOM_Manufacturer Part": "",
-            "BOM_Supplier Part": "",
-            "BOM_Supplier": "",
-            "puuid": "35f8e11d95b741f2b1393e03bca7f3f8",
-            "uuid": "695a19d2527641489d5e0db35bfcf59b"
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900017879",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "ARDUINO_NANO",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "ff6e2030776d4574a7594ce501bb86c5",
+            "uuid": "b7adf400643b4936be8b786704d0e70f"
           }
         ],
         [
@@ -52,6 +53,20 @@
             "BOM_Manufacturer Part": "",
             "puuid": "8c7cd444383c4788b0f2103e0304c7e4",
             "uuid": "177862ea06d44832b116a35067c092d4"
+          }
+        ],
+        [
+          "6x6-PushButton",
+          1,
+          "6X6-PUSHBUTTON",
+          "PAUSE",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "35f8e11d95b741f2b1393e03bca7f3f8",
+            "uuid": "695a19d2527641489d5e0db35bfcf59b"
           }
         ],
         [
@@ -95,21 +110,6 @@
             "puuid": "21bd55d2b6554e499dd1d26b3505d38e",
             "uuid": "330841f76aea4fee9f9a5ba53f21259b"
           }
-        ],
-        [
-          "ARDUINO_NANO",
-          1,
-          "COMM-TH_ARDUINO_NANO",
-          "U2",
-          {
-            "BOM_Supplier": "LCSC",
-            "BOM_Supplier Part": "C9900017879",
-            "BOM_Manufacturer": "null",
-            "BOM_Manufacturer Part": "ARDUINO_NANO",
-            "BOM_JLCPCB Part Class": "Extended Part",
-            "puuid": "ff6e2030776d4574a7594ce501bb86c5",
-            "uuid": "b7adf400643b4936be8b786704d0e70f"
-          }
         ]
       ],
       "updateTime": 1664639666,
@@ -127,10 +127,10 @@
       "master": "",
       "thumb": "/images/thumb-default.png",
       "components": {
-        "04fd30d8ff764d6ea2a2f6642d92c2de": 3,
-        "ff6e2030776d4574a7594ce501bb86c5": 1,
         "21bd55d2b6554e499dd1d26b3505d38e": 1,
+        "ff6e2030776d4574a7594ce501bb86c5": 1,
         "35f8e11d95b741f2b1393e03bca7f3f8": 1,
+        "04fd30d8ff764d6ea2a2f6642d92c2de": 3,
         "8c7cd444383c4788b0f2103e0304c7e4": 1
       },
       "BOM": [],
