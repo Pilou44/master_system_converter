@@ -25,7 +25,7 @@ To achieve that, it integrates an Arduino Nano.
 Developped from Raphaël Assenat gerber file, it has no stack initialization. I've used it to test my Master System games on my Megadrive.
 
 <center>
-<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v0_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v0_back.jpg?raw=true" width="400"/>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v0_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v0_back.jpg?raw=true" width="200"/>
 </center>
 
 ### V1.0
@@ -36,21 +36,23 @@ First PCB home made, with Arduino Nano. From PCB to working version, several pat
 However, this version works without Arduino to launch games that don't need stack initialization.
 
 <center>
-<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_back.jpg?raw=true" width="400"/>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_back.jpg?raw=true" width="200"/>
 </center>
 
 ### V1.1
 This is previous version with patches integrated. It is first deployable version.
 
 <center>
-<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_back.jpg?raw=true" width="400"/>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_back.jpg?raw=true" width="200"/>
 </center>
 
 ### V2.0
 This version is based on V1.1 with different pinout to simplify code.
+### V2.1
+Same as V2.0, but tracks has been moved on PCB to be farer from holes.
 
 <center>
-<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_back.jpg?raw=true" width="400"/>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_back.jpg?raw=true" width="200"/>
 </center>
 
 ### V2.1
