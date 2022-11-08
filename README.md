@@ -13,7 +13,7 @@ To achieve that, it integrates an Arduino Nano.
 
 ## Components
 
- - 1 Arduino Nano or compatible (I use Elegoo version). Push button has to be removed to fit into cartridge shell. USB port can be removed too once software has been flashed.
+ - 1 Arduino Nano or compatible (I've tested Elegoo and AZ-Delivery versions). Reset button has to be removed to fit into cartridge shell. USB port can be removed too once software has been flashed. It's better not to use old bootloader.
  - 2 resistors 1.5 kΩ
  - 1 resistor 56 kΩ
  - 1 push button 6 x 6 mm of at least 9.5 mm height (can be found [here](https://www.gotronic.fr/art-bp-subminiature-krs0643-4266.htm))
@@ -36,10 +36,22 @@ First PCB home made, with Arduino Nano. From PCB to working version, several pat
 However, this version works without Arduino to launch games that don't need stack initialization.
 
 <center>
-<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0-front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0-back.jpg?raw=true" width="400"/>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.0_back.jpg?raw=true" width="400"/>
 </center>
 
 ### V1.1
-This is previous version with patches integrated. It should be first deployable version. Software optimizations are to be developped on this version.
+This is previous version with patches integrated. It is first deployable version.
+
+<center>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.1_back.jpg?raw=true" width="400"/>
+</center>
+
 ### V2.0
 This version is based on V1.1 with different pinout to simplify code.
+
+<center>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_front.jpg?raw=true" width="400"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_back.jpg?raw=true" width="400"/>
+</center>
+
+### V2.1
+Same as V2.0, but tracks has been moved on PCB to be farer from holes.
