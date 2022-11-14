@@ -48,12 +48,9 @@ This is previous version with patches integrated. It is first deployable version
 
 ### V2.0
 This version is based on V1.1 with different pinout to simplify code.
-### V2.1
-Same as V2.0, but tracks has been moved on PCB to be farer from holes.
+It works fine on Megadrive 2, but doesn't seem to work on original megadrive for an unknown reason.
 
 <center>
 <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_back.jpg?raw=true" width="200"/>
 </center>
 
-### V2.1
-Same as V2.0, but tracks has been moved on PCB to be farer from holes.
