@@ -47,10 +47,18 @@ This is previous version with patches integrated. It is first deployable version
 </center>
 
 ### V2.0
-This version is based on V1.1 with different pinout to simplify code.
+This version is based on V1.1 with different pinout (using analog IOs) to simplify code.
 It works fine on Megadrive 2, but doesn't seem to work on original megadrive for an unknown reason.
 
 <center>
 <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_front.jpg?raw=true" width="200"/> <img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v2.0_back.jpg?raw=true" width="200"/>
 </center>
+
+### V1.2
+This version is based on V1.1 with tracks farer from holes. It works good on Megadrive 1 and 2.
+
+<center>
+<img src="https://github.com/Pilou44/master_system_converter/blob/main/docs/v1.2_front.jpg?raw=true" width="200"/>
+</center>
+
 
